@@ -1,0 +1,2 @@
+INSERT INTO MEMBER (USERNAME, ADDRESS) VALUES ('user1', JSON '{"city": "Seoul", "street": "Gangnam-gu", "zip": "12345", "state":"NOWON"}');
+INSERT INTO MEMBER (USERNAME, ADDRESS) VALUES ('user2', JSON '{"city": "busan", "street": "buk-gu", "zip": "12345", "state":"NOWON"}');

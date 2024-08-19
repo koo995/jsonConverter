@@ -1,0 +1,30 @@
+spring:
+  datasource:
+    url: jdbc:h2:tcp:localhost/~/test
+    username: sa
+    password: 1234
+    driver-class-name: org.h2.Driver
+#  datasource:
+#    url: jdbc:mysql://localhost:3306/jsontest
+#    username: root
+#    password: 1234
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  sql:
+    init:
+      mode: always
+      schema-locations: classpath:db/schema.sql
+      data-locations: optional:classpath:db/data.sql
+
+  jpa:
+    properties:
+      hibernate:
+        show_sql: true
+        format_sql: true
+
+logging:
+  level:
+    org:
+      springframework:
+        jdbc:
+          core: trace
