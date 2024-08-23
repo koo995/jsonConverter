@@ -18,6 +18,7 @@ public class AddressConverter implements AttributeConverter<Address, String> {
         try {
             return objectMapper.writeValueAsString(address);
         } catch (Exception e) {
+            log.info("Address 타입을 Json 으로 변환할 수 없습니다.");
             throw new RuntimeException(e);
         }
     }
@@ -27,6 +28,7 @@ public class AddressConverter implements AttributeConverter<Address, String> {
         try {
             return objectMapper.readValue(source, Address.class);
         } catch (Exception e) {
+            log.info("json 타입을 Address 타입으로 변환할 수 없습니다.");
             throw new RuntimeException(e);
         }
     }
