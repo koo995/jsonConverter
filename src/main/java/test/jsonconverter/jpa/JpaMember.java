@@ -1,9 +1,12 @@
 package test.jsonconverter.jpa;
 
+import com.fasterxml.jackson.annotation.JsonSubTypes;
+import io.hypersistence.utils.hibernate.type.json.JsonType;
 import jakarta.persistence.*;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
+import org.hibernate.annotations.Type;
 import test.jsonconverter.Address;
 
 @Getter
@@ -19,6 +22,7 @@ public class JpaMember {
 
     private String username;
 
+    @Type(JsonType.class)
     @Convert(converter = AddressConverter.class)
     @Column(columnDefinition = "json")
     private Address address;
